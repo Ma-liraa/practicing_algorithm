@@ -1,5 +1,4 @@
-const str = "Ma__lira"; // a, e, i, o, u
-// str = 5
+const str = "Ma__lira"; 
 
 const countStrVowel = (str) => {
   let count = 0;
@@ -24,5 +23,6 @@ const countStrVowel = (str) => {
   }
   return count;
 };
+
 const result = countStrVowel(str.toLocaleLowerCase());
 console.log(result);
