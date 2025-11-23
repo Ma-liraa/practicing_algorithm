@@ -6,7 +6,7 @@ for (let i = 0; i < str.length; i++) {
   arr.push(Number(str[i]));
 }
 
-const PalindromNumberFn = (num) => {
+const palindromNumberFn = (num) => {
   for (let i = 1; i <= num.length; i++) {
     let bo = num.length - i;
     if (num[i - 1] !== num[bo]) return "num is not Palindrom";
@@ -14,5 +14,5 @@ const PalindromNumberFn = (num) => {
   return "num is Palidrom";
 };
 
-const result = PalindromNumberFn(arr);
+const result = palindromNumberFn(arr);
 console.log(result);
