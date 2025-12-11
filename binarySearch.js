@@ -1,20 +1,20 @@
-const binarySearchFn = (arr, target) => {
-  let high = arr.length - 1;
-  let low = 0;
-  while (high >= low) {
-    let mid = Math.round((high + low) / 2);
-    let guess = arr[mid];
-    if (guess < target) {
-      low = mid + 1;
+const binarySearch = (sortedNumbers, targetValue) => {
+  let leftIndex = 0;
+  let rightIndex = sortedNumbers.length - 1;
+  while (leftIndex <= rightIndex) {
+    const middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+    const middleValue = sortedNumbers[middleIndex];
+    if (middleValue === targetValue) {
+      return middleIndex;
     }
-    if (guess > target) {
-      high = mid - 1;
-    }
-    if (guess === target) {
-      return mid;
+    if (middleValue < targetValue) {
+      leftIndex = middleIndex + 1;
+    } else {
+      rightIndex = middleIndex - 1;
     }
   }
-  return "targrt not in array";
+  return -1;
 };
-const result = binarySearchFn([2, 5, 8, 12, 16, 23, 38, 56, 72, 91], 2);
+const numbers = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91];
+const result = binarySearch(numbers, 2);
 console.log(result);
